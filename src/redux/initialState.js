@@ -1,6 +1,10 @@
 export const initialState = () => {
   return {
-    contacts: [],
+    contacts: {
+      items: [],
+      isLoading: false,
+      error: null,
+    },
     filter: '',
   };
 };

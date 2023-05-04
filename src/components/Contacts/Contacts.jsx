@@ -1,15 +1,14 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { getContact, getFilter } from '../../redux/selectors';
-import { removeContact } from '../../redux/reducer';
+import { deleteContacts } from 'redux/options';
 
 const ContactList = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(getContact);
+  const { items } = useSelector(getContact);
   const handleFilter = useSelector(getFilter);
-  const visible = contacts.filter(e =>
+  const visible = items.filter(e =>
     e.name.toLowerCase().includes(handleFilter.toLowerCase())
   );
-
   return (
     <>
       <ul className="ml-5">
@@ -21,7 +20,7 @@ const ContactList = () => {
                 className="ml-3 bg-red-400 rounded-md p-0.5 font-light hover:bg-red-600 hover:text-white hover:shadow-lg"
                 type="button"
                 onClick={() => {
-                  dispatch(removeContact(id));
+                  dispatch(deleteContacts(id));
                 }}
               >
                 Delete

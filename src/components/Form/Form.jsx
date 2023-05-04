@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { nanoid } from '@reduxjs/toolkit';
 import { useDispatch } from 'react-redux';
-import { addContact } from '../../redux/reducer';
+import { addContacts } from 'redux/options';
 
 const Form = () => {
   const [name, setName] = useState('');
@@ -21,7 +21,7 @@ const Form = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch(addContact({ name, number }));
+    dispatch(addContacts({ name, number }));
     handleReset();
   };
 
@@ -46,7 +46,7 @@ const Form = () => {
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
           autoComplete="off"
-          className="mt-2 mb-2 max-w-xs rounded border border-cyan-700 focus:border-cyan-500 focus:shadow-lg outline-none"
+          className="mt-2 mb-2 pl-1 max-w-xs rounded border border-cyan-700 focus:border-cyan-500 focus:shadow-lg outline-none"
         />
         <label htmlFor={numberId} className="font-mono text-slate-400">
           Number
@@ -61,7 +61,7 @@ const Form = () => {
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
           autoComplete="off"
-          className="mt-2 mb-2 max-w-xs rounded border border-cyan-700 focus:border-cyan-500 focus:shadow-lg outline-none"
+          className="mt-2 mb-2 pl-1 max-w-xs rounded border border-cyan-700 focus:border-cyan-500 focus:shadow-lg outline-none"
         />
         <button
           className="bg-cyan-700 rounded max-w-[50%] text-white hover:bg-cyan-500 hover:text-black hover:shadow-lg"

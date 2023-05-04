@@ -20,7 +20,7 @@ const Filter = () => {
         type="text"
         value={handleFilter}
         autoComplete="off"
-        className="mt-2 mb-2 max-w-xs rounded border border-cyan-700 focus:border-cyan-500 focus:shadow-lg outline-none"
+        className="mt-2 mb-2 pl-1 max-w-xs rounded border border-cyan-700 focus:border-cyan-500 focus:shadow-lg outline-none"
       />
     </div>
   );
